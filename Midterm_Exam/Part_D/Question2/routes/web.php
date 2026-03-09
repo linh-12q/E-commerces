@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::post('/students', [App\Http\Controllers\StudentController::class, 'index']);
+Route::get('/login', [LoginController::class, 'showLogin']); // show form
+Route::post('/login', [LoginController::class, 'store']); // save user
